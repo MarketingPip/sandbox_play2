@@ -1,8 +1,3 @@
-import process from "node:process"
-
-console.log(process.argv)
-
-
 import readline from 'readline';
 
 // Enable raw mode so we can capture keypress events (like arrow keys) directly
@@ -79,4 +74,3 @@ function cleanupAndExecute(index) {
 
 // Initial draw
 drawMenu();
-
