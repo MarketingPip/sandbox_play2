@@ -1,0 +1,134 @@
+name: node-api-timeline
+
+on:
+  workflow_dispatch:
+  
+permissions:
+  contents: write
+
+concurrency:
+  group: node-api-timeline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  resolve-targets:
+    name: Resolve Node versions
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve latest Node release per major
+        id: set-matrix
+        run: |
+          python3 - <<'PY' > matrix.json
+          import json
+          import re
+          import urllib.request
+
+          url = "https://nodejs.org/dist/index.json"
+          with urllib.request.urlopen(url, timeout=30) as r:
+              dist = json.load(r)
+
+          latest = {}
+          for rel in dist:
+              m = re.match(r"v(\d+)\.(\d+)\.(\d+)", rel["version"])
+              if not m:
+                  continue
+              major = int(m.group(1))
+              if "linux-x64" not in rel.get("files", []):
+                  continue
+              latest.setdefault(major, rel["version"])
+
+          versions = [latest[m] for m in sorted(latest)]
+          print(json.dumps({"version": versions}))
+          PY
+
+          echo "matrix=$(cat matrix.json | jq -c .)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-version-matrix
+          path: matrix.json
+
+  collect:
+    name: Collect Node ${{ matrix.version }}
+    needs: resolve-targets
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJson(needs.resolve-targets.outputs.matrix).version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install nvm
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+      - name: Install Node ${{ matrix.version }}
+        shell: bash -l {0}
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          . "$NVM_DIR/nvm.sh"
+          nvm install "${{ matrix.version }}"
+
+      - name: Collect built-ins and exports
+        shell: bash -l {0}
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          . "$NVM_DIR/nvm.sh"
+          nvm use "${{ matrix.version }}"
+
+          mkdir -p artifacts
+          node scripts/collect-node-builtins.js \
+            --version "${{ matrix.version }}" \
+            --out "artifacts/node-${{ matrix.version }}.json"
+
+      - name: Upload collected artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-${{ matrix.version }}
+          path: artifacts/node-${{ matrix.version }}.json
+
+  aggregate:
+    name: Aggregate timeline and commit results
+    needs: collect
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: node-*
+          merge-multiple: true
+
+      - name: Build timeline files
+        run: |
+          mkdir -p data
+          node scripts/build-node-api-timeline.js \
+            --input-dir artifacts \
+            --json-out data/node-api-timeline.json \
+            --markdown-out data/node-api-timeline.md
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/node-api-timeline.json data/node-api-timeline.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Node.js built-in API timeline"
+            git push
+          fi
