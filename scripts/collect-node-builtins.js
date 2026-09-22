@@ -5,6 +5,23 @@ var fs = require('fs');
 var path = require('path');
 var Module = require('module');
 
+function mkdirpSync(dir) {
+  if (!dir || dir === '.' || dir === path.sep) return;
+
+  var parts = path.resolve(dir).split(path.sep);
+  var current = '';
+
+  for (var i = 0; i < parts.length; i++) {
+    current += parts[i] + path.sep;
+    try {
+      fs.mkdirSync(current);
+    } catch (e) {
+      if (e && e.code === 'EEXIST') continue;
+      throw e;
+    }
+  }
+}
+
 function parseArgs(argv) {
   var args = {};
   for (var i = 2; i < argv.length; i++) {
@@ -150,7 +167,7 @@ function main() {
     modules: modules
   };
 
-  fs.mkdirSync(path.dirname(out), { recursive: true });
+  mkdirpSync(path.dirname(out));
   fs.writeFileSync(out, JSON.stringify(payload, null, 2) + '\n');
 }
 
