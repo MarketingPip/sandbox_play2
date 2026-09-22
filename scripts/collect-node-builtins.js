@@ -5,23 +5,6 @@ var fs = require('fs');
 var path = require('path');
 var Module = require('module');
 
-function mkdirpSync(dir) {
-  if (!dir || dir === '.' || dir === path.sep) return;
-
-  var parts = path.resolve(dir).split(path.sep);
-  var current = '';
-
-  for (var i = 0; i < parts.length; i++) {
-    current += parts[i] + path.sep;
-    try {
-      fs.mkdirSync(current);
-    } catch (e) {
-      if (e && e.code === 'EEXIST') continue;
-      throw e;
-    }
-  }
-}
-
 function parseArgs(argv) {
   var args = {};
   for (var i = 2; i < argv.length; i++) {
@@ -87,12 +70,59 @@ function describeValue(value) {
   }
 }
 
+function getOwnPropertyNamesSafe(obj) {
+  var keys = [];
+  try {
+    keys = Object.getOwnPropertyNames(obj);
+  } catch (e) {}
+  if (typeof Object.getOwnPropertySymbols === 'function') {
+    try {
+      keys = keys.concat(Object.getOwnPropertySymbols(obj));
+    } catch (e) {}
+  }
+  return keys;
+}
+
+function getAllKeys(obj) {
+  if (obj === null || obj === undefined) return [];
+  if (typeof obj !== 'function' && typeof obj !== 'object') return [];
+
+  var keys = getOwnPropertyNamesSafe(obj);
+
+  var proto = obj;
+  while (proto) {
+    try {
+      proto = Object.getPrototypeOf(proto);
+      if (proto) {
+        keys = keys.concat(getOwnPropertyNamesSafe(proto));
+      }
+    } catch (e) {
+      break;
+    }
+  }
+
+  return keys;
+}
+
+function uniqSorted(arr) {
+  var seen = {};
+  var out = [];
+  for (var i = 0; i < arr.length; i++) {
+    var x = String(arr[i]);
+    if (!seen[x]) {
+      seen[x] = true;
+      out.push(x);
+    }
+  }
+  return out.sort();
+}
+
 function getExports(mod) {
   if (mod === null || mod === undefined) return null;
 
   if (typeof mod === 'function' || typeof mod === 'object') {
+    var keys = uniqSorted(getAllKeys(mod));
     var out = {};
-    var keys = Object.keys(mod).sort();
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       try {
@@ -109,17 +139,21 @@ function getExports(mod) {
   };
 }
 
-function uniqSorted(arr) {
-  var seen = {};
-  var out = [];
-  for (var i = 0; i < arr.length; i++) {
-    var x = arr[i];
-    if (!seen[x]) {
-      seen[x] = true;
-      out.push(x);
+function mkdirpSync(dir) {
+  if (!dir || dir === '.' || dir === path.sep) return;
+
+  var parts = path.resolve(dir).split(path.sep);
+  var current = '';
+
+  for (var i = 0; i < parts.length; i++) {
+    current += parts[i] + path.sep;
+    try {
+      fs.mkdirSync(current);
+    } catch (e) {
+      if (e && e.code === 'EEXIST') continue;
+      throw e;
     }
   }
-  return out.sort();
 }
 
 function main() {
