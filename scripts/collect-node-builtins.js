@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
-const Module = require('module');
+var fs = require('fs');
+var path = require('path');
+var Module = require('module');
 
 function parseArgs(argv) {
-  const args = {};
-  for (let i = 2; i < argv.length; i++) {
-    const key = argv[i];
+  var args = {};
+  for (var i = 2; i < argv.length; i++) {
+    var key = argv[i];
     if (key === '--version') args.version = argv[++i];
     if (key === '--out') args.out = argv[++i];
   }
@@ -23,7 +22,7 @@ function isRequireable(name) {
   try {
     require.resolve(name);
     return true;
-  } catch {
+  } catch (e) {
     return false;
   }
 }
@@ -31,36 +30,41 @@ function isRequireable(name) {
 function safeRequire(name) {
   try {
     return require(name);
-  } catch {
+  } catch (e) {
     return null;
   }
 }
 
 function describeValue(value) {
   if (value === null) return { type: 'null' };
+
   if (Array.isArray(value)) return { type: 'array' };
+
   switch (typeof value) {
-    case 'undefined': return { type: 'undefined' };
-    case 'boolean': return { type: 'boolean' };
-    case 'number': return { type: 'number' };
-    case 'string': return { type: 'string' };
-    case 'symbol': return { type: 'symbol' };
-    case 'function': {
-      const out = { type: 'function' };
+    case 'undefined':
+      return { type: 'undefined' };
+    case 'boolean':
+      return { type: 'boolean' };
+    case 'number':
+      return { type: 'number' };
+    case 'string':
+      return { type: 'string' };
+    case 'symbol':
+      return { type: 'symbol' };
+    case 'function':
+      var out = { type: 'function' };
       try {
         out.name = value.name || null;
-      } catch {}
+      } catch (e) {}
       try {
-        out.length = value.length ?? null;
-      } catch {}
+        out.length = (typeof value.length === 'number') ? value.length : null;
+      } catch (e) {}
       return out;
-    }
-    case 'object': {
+    case 'object':
       if (value instanceof RegExp) return { type: 'regexp' };
       if (value instanceof Date) return { type: 'date' };
       if (value instanceof Error) return { type: 'error' };
       return { type: 'object' };
-    }
     default:
       return { type: typeof value };
   }
@@ -70,11 +74,13 @@ function getExports(mod) {
   if (mod === null || mod === undefined) return null;
 
   if (typeof mod === 'function' || typeof mod === 'object') {
-    const out = {};
-    for (const key of Object.keys(mod).sort()) {
+    var out = {};
+    var keys = Object.keys(mod).sort();
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
       try {
         out[key] = describeValue(mod[key]);
-      } catch {
+      } catch (e) {
         out[key] = { type: 'unknown' };
       }
     }
@@ -86,24 +92,40 @@ function getExports(mod) {
   };
 }
 
+function uniqSorted(arr) {
+  var seen = {};
+  var out = [];
+  for (var i = 0; i < arr.length; i++) {
+    var x = arr[i];
+    if (!seen[x]) {
+      seen[x] = true;
+      out.push(x);
+    }
+  }
+  return out.sort();
+}
+
 function main() {
-  const { version, out } = parseArgs(process.argv);
+  var parsed = parseArgs(process.argv);
+  var version = parsed.version;
+  var out = parsed.out;
 
-  const builtinModules = Array.from(new Set([
-    ...(process.builtinModules || []),
-    ...(Module.builtinModules || []),
-  ])).sort();
+  var builtinModules = uniqSorted(
+    (process.builtinModules || []).concat(Module.builtinModules || [])
+  );
 
-  const modules = {};
+  var modules = {};
 
-  for (const name of builtinModules) {
-    const candidates = [name];
-    if (!name.startsWith('node:')) candidates.push(`node:${name}`);
+  for (var i = 0; i < builtinModules.length; i++) {
+    var name = builtinModules[i];
+    var candidates = [name];
+    if (name.indexOf('node:') !== 0) candidates.push('node:' + name);
 
-    let loaded = null;
-    let usedName = null;
+    var loaded = null;
+    var usedName = null;
 
-    for (const candidate of candidates) {
+    for (var j = 0; j < candidates.length; j++) {
+      var candidate = candidates[j];
       if (isRequireable(candidate)) {
         loaded = safeRequire(candidate);
         usedName = candidate;
@@ -115,17 +137,17 @@ function main() {
       requestedName: name,
       resolvedName: usedName,
       requireable: usedName !== null,
-      exports: getExports(loaded),
+      exports: getExports(loaded)
     };
   }
 
-  const payload = {
+  var payload = {
     generatedAt: new Date().toISOString(),
     nodeVersion: process.version,
     requestedVersion: version,
     platform: process.platform,
     arch: process.arch,
-    modules,
+    modules: modules
   };
 
   fs.mkdirSync(path.dirname(out), { recursive: true });
