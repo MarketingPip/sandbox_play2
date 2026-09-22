@@ -1,6 +1,6 @@
 # Node.js Built-in API Timeline
 
-Generated: 2026-09-22T06:21:31.657Z
+Generated: 2026-09-22T06:36:08.739Z
 
 Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2, v10.24.1, v11.15.0, v12.22.12, v13.14.0, v14.21.3, v15.14.0, v16.20.2, v17.9.1, v18.20.8, v19.9.0, v20.20.2, v21.7.3, v22.23.2, v23.11.1, v24.21.0, v25.9.0, v26.9.0
 
@@ -133,21 +133,291 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### _stream_duplex
 
-- `from` — added v16.20.2, removed after v26.9.0
+- `_fromList` — added v12.22.12, removed after v26.9.0
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
+- `from` — added v12.22.12, removed after v26.9.0
 - `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `ReadableState` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
 - `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
+- `wrap` — added v16.20.2, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
+
+### _stream_passthrough
+
+- `_fromList` — added v12.22.12, removed after v26.9.0
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
+- `from` — added v12.22.12, removed after v26.9.0
+- `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `ReadableState` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
+- `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
+- `wrap` — added v16.20.2, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
 
 ### _stream_readable
 
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
 - `from` — added v10.24.1, removed after v11.15.0
 - `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
 - `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
 - `wrap` — added v16.20.2, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
+
+### _stream_transform
+
+- `_fromList` — added v12.22.12, removed after v26.9.0
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
+- `from` — added v12.22.12, removed after v26.9.0
+- `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `ReadableState` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
+- `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
+- `wrap` — added v16.20.2, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
+
+### _stream_wrap
+
+- `_fromList` — added v12.22.12, removed after v26.9.0
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
+- `from` — added v12.22.12, removed after v26.9.0
+- `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `ReadableState` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
+- `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
+- `wrap` — added v16.20.2, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
 
 ### _stream_writable
 
+- `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
+- `_isUint8Array` — added v12.22.12, removed after v26.9.0
+- `_uint8ArrayToBuffer` — added v12.22.12, removed after v26.9.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
+- `addAbortSignal` — added v15.14.0, removed after v26.9.0
+- `captureRejections` — added v12.22.12, removed after v26.9.0
+- `captureRejectionSymbol` — added v12.22.12, removed after v26.9.0
+- `compose` — added v16.20.2, removed after v26.9.0
+- `defaultMaxListeners` — added v12.22.12, removed after v26.9.0
+- `destroy` — added v16.20.2, removed after v26.9.0
+- `Duplex` — added v12.22.12, removed after v26.9.0
+- `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12, removed after v26.9.0
+- `EventEmitter` — added v12.22.12, removed after v26.9.0
+- `EventEmitterAsyncResource` — added v16.20.2, removed after v26.9.0
+- `finished` — added v12.22.12, removed after v26.9.0
 - `fromWeb` — added v17.9.1, removed after v26.9.0
+- `getDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `getEventListeners` — added v14.21.3, removed after v26.9.0
+- `getMaxListeners` — added v18.20.8, removed after v26.9.0
+- `init` — added v12.22.12, removed after v26.9.0
+- `isDestroyed` — added v18.20.8, removed after v26.9.0
+- `isDisturbed` — added v16.20.2, removed after v26.9.0
+- `isErrored` — added v16.20.2, removed after v26.9.0
+- `isReadable` — added v16.20.2, removed after v26.9.0
+- `isWritable` — added v18.20.8, removed after v26.9.0
+- `kMaxEventTargetListeners` — added v14.21.3, removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — added v14.21.3, removed after v26.9.0
+- `listenerCount` — added v12.22.12, removed after v26.9.0
+- `on` — added v12.22.12, removed after v26.9.0
+- `once` — added v12.22.12, removed after v26.9.0
+- `PassThrough` — added v12.22.12, removed after v26.9.0
+- `pipeline` — added v12.22.12, removed after v26.9.0
+- `promises` — added v15.14.0, removed after v26.9.0
+- `Readable` — added v12.22.12, removed after v26.9.0
+- `setDefaultHighWaterMark` — added v18.20.8, removed after v26.9.0
+- `setMaxListeners` — added v14.21.3, removed after v26.9.0
+- `Stream` — added v12.22.12, removed after v26.9.0
 - `toWeb` — added v17.9.1, removed after v26.9.0
+- `Transform` — added v12.22.12, removed after v26.9.0
+- `usingDomains` — added v12.22.12, removed after v26.9.0
+- `Writable` — added v12.22.12, removed after v26.9.0
 
 ### assert
 
@@ -187,10 +457,17 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 ### cluster
 
 - `isPrimary` — added v16.20.2
+- `off` — added v10.24.1
+- `rawListeners` — added v9.11.2
 - `setupPrimary` — added v16.20.2
+- `Symbol(kCapture)` — added v12.22.12
+- `Symbol(shapeMode)` — added v20.20.2
 
 ### console
 
+- `_ignoreErrors` — added v8.17.0
+- `_stderrErrorHandler` — added v8.17.0
+- `_stdoutErrorHandler` — added v8.17.0
 - `context` — added v8.17.0
 - `createTask` — added v19.9.0
 - `debug` — added v8.17.0
@@ -201,6 +478,20 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `markTimeline` — added v8.17.0, removed after v11.15.0
 - `profile` — added v8.17.0
 - `profileEnd` — added v8.17.0
+- `Symbol(groupIndent)` — added v8.17.0, removed after v10.24.1
+- `Symbol(kBindProperties)` — added v11.15.0
+- `Symbol(kBindStreamsEager)` — added v11.15.0
+- `Symbol(kBindStreamsLazy)` — added v11.15.0
+- `Symbol(kColorMode)` — added v10.24.1
+- `Symbol(kFormatForStderr)` — added v10.24.1
+- `Symbol(kFormatForStdout)` — added v10.24.1
+- `Symbol(kGetInspectOptions)` — added v10.24.1
+- `Symbol(kGroupIndent)` — added v10.24.1, removed after v22.23.2
+- `Symbol(kGroupIndentationString)` — added v22.23.2, removed after v23.11.1
+- `Symbol(kGroupIndentWidth)` — added v12.22.12, removed after v13.14.0
+- `Symbol(kIsConsole)` — added v11.15.0
+- `Symbol(kWriteToConsole)` — added v11.15.0
+- `Symbol(Symbol.toStringTag)` — added v12.22.12, removed after v13.14.0
 - `table` — added v8.17.0
 - `timeline` — added v8.17.0, removed after v11.15.0
 - `timelineEnd` — added v8.17.0, removed after v11.15.0
@@ -355,6 +646,8 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `EventEmitterAsyncResource` — added v16.20.2
 - `getEventListeners` — added v14.21.3
 - `getMaxListeners` — added v18.20.8
+- `kMaxEventTargetListeners` — added v14.21.3
+- `kMaxEventTargetListenersWarned` — added v14.21.3
 - `on` — added v12.22.12
 - `once` — added v10.24.1
 - `setMaxListeners` — added v14.21.3
@@ -429,6 +722,8 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### module
 
+- `_readPackage` — added v16.20.2, removed after v17.9.1
+- `_stat` — added v16.20.2, removed after v17.9.1
 - `constants` — added v22.23.2
 - `createRequire` — added v12.22.12
 - `createRequireFromPath` — added v10.24.1, removed after v16.20.2
@@ -456,6 +751,10 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `setDefaultAutoSelectFamily` — added v18.20.8
 - `setDefaultAutoSelectFamilyAttemptTimeout` — added v18.20.8
 - `SocketAddress` — added v14.21.3
+
+### node-inspect/lib/internal/inspect_client
+
+- `once` — added v10.24.1, removed after v12.22.12
 
 ### node:sea
 
@@ -521,12 +820,17 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `getBuiltinModule` — added v20.20.2, removed after v21.7.3
 - `hasUncaughtExceptionCaptureCallback` — added v9.11.2
 - `loadEnvFile` — added v20.20.2
+- `off` — added v10.24.1
+- `rawListeners` — added v9.11.2
 - `ref` — added v22.23.2
-- `report` — added v16.20.2
+- `report` — added v12.22.12
 - `resourceUsage` — added v12.22.12
 - `setSourceMapsEnabled` — added v14.21.3, removed after v15.14.0
 - `setUncaughtExceptionCaptureCallback` — added v9.11.2
 - `sourceMapsEnabled` — added v18.20.8, removed after v19.9.0
+- `Symbol(kCapture)` — added v12.22.12
+- `Symbol(shapeMode)` — added v20.20.2
+- `Symbol(Symbol.toStringTag)` — added v11.15.0
 - `threadCpuUsage` — added v22.23.2
 - `unref` — added v22.23.2
 
@@ -536,7 +840,7 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### repl
 
-- `builtinModules` — added v14.21.3, removed after v22.23.2
+- `builtinModules` — added v14.21.3
 - `isValidSyntax` — added v20.20.2, removed after v21.7.3
 
 ### stream
@@ -544,20 +848,37 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `_isArrayBufferView` — added v20.20.2, removed after v21.7.3
 - `_isUint8Array` — added v8.17.0
 - `_uint8ArrayToBuffer` — added v8.17.0
+- `addAbortListener` — added v18.20.8, removed after v19.9.0
 - `addAbortSignal` — added v15.14.0
+- `captureRejections` — added v12.22.12
+- `captureRejectionSymbol` — added v12.22.12
 - `compose` — added v16.20.2
+- `defaultMaxListeners` — added v12.22.12
 - `destroy` — added v16.20.2
 - `duplexPair` — added v20.20.2, removed after v21.7.3
+- `errorMonitor` — added v12.22.12
+- `EventEmitter` — added v12.22.12
+- `EventEmitterAsyncResource` — added v16.20.2
 - `finished` — added v10.24.1
 - `getDefaultHighWaterMark` — added v18.20.8
+- `getEventListeners` — added v14.21.3
+- `getMaxListeners` — added v18.20.8
+- `init` — added v12.22.12
 - `isDestroyed` — added v18.20.8
 - `isDisturbed` — added v16.20.2
 - `isErrored` — added v16.20.2
 - `isReadable` — added v16.20.2
 - `isWritable` — added v18.20.8
+- `kMaxEventTargetListeners` — added v14.21.3
+- `kMaxEventTargetListenersWarned` — added v14.21.3
+- `listenerCount` — added v12.22.12
+- `on` — added v12.22.12
+- `once` — added v12.22.12
 - `pipeline` — added v10.24.1
 - `promises` — added v15.14.0
 - `setDefaultHighWaterMark` — added v18.20.8
+- `setMaxListeners` — added v14.21.3
+- `usingDomains` — added v12.22.12
 
 ### stream/consumers
 
@@ -718,19 +1039,82 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `createZipArchiveSync` — added v26.9.0
 - `createZstdCompress` — added v22.23.2
 - `createZstdDecompress` — added v22.23.2
-- `DEFLATE` — added v8.17.0, removed after v12.22.12
-- `DEFLATERAW` — added v8.17.0, removed after v12.22.12
+- `DEFLATE` — added v8.17.0
+- `DEFLATERAW` — added v8.17.0
 - `getMaxZipContentSize` — added v26.9.0
-- `GUNZIP` — added v8.17.0, removed after v12.22.12
-- `GZIP` — added v8.17.0, removed after v12.22.12
-- `INFLATE` — added v8.17.0, removed after v12.22.12
-- `INFLATERAW` — added v8.17.0, removed after v12.22.12
+- `GUNZIP` — added v8.17.0
+- `GZIP` — added v8.17.0
+- `INFLATE` — added v8.17.0
+- `INFLATERAW` — added v8.17.0
 - `setMaxZipContentSize` — added v26.9.0
-- `UNZIP` — added v8.17.0, removed after v12.22.12
+- `UNZIP` — added v8.17.0
 - `ZipBuffer` — added v26.9.0
 - `ZipEntry` — added v26.9.0
 - `ZipFile` — added v26.9.0
 - `zipFiles` — added v26.9.0
+- `ZSTD_btlazy2` — added v22.23.2
+- `ZSTD_btopt` — added v22.23.2
+- `ZSTD_btultra` — added v22.23.2
+- `ZSTD_btultra2` — added v22.23.2
+- `ZSTD_c_chainLog` — added v22.23.2
+- `ZSTD_c_checksumFlag` — added v22.23.2
+- `ZSTD_c_compressionLevel` — added v22.23.2
+- `ZSTD_c_contentSizeFlag` — added v22.23.2
+- `ZSTD_c_dictIDFlag` — added v22.23.2
+- `ZSTD_c_enableLongDistanceMatching` — added v22.23.2
+- `ZSTD_c_hashLog` — added v22.23.2
+- `ZSTD_c_jobSize` — added v22.23.2
+- `ZSTD_c_ldmBucketSizeLog` — added v22.23.2
+- `ZSTD_c_ldmHashLog` — added v22.23.2
+- `ZSTD_c_ldmHashRateLog` — added v22.23.2
+- `ZSTD_c_ldmMinMatch` — added v22.23.2
+- `ZSTD_c_minMatch` — added v22.23.2
+- `ZSTD_c_nbWorkers` — added v22.23.2
+- `ZSTD_c_overlapLog` — added v22.23.2
+- `ZSTD_c_searchLog` — added v22.23.2
+- `ZSTD_c_strategy` — added v22.23.2
+- `ZSTD_c_targetLength` — added v22.23.2
+- `ZSTD_c_windowLog` — added v22.23.2
+- `ZSTD_CLEVEL_DEFAULT` — added v22.23.2
+- `ZSTD_COMPRESS` — added v22.23.2
+- `ZSTD_d_windowLogMax` — added v22.23.2
+- `ZSTD_DECOMPRESS` — added v22.23.2
+- `ZSTD_dfast` — added v22.23.2
+- `ZSTD_e_continue` — added v22.23.2
+- `ZSTD_e_end` — added v22.23.2
+- `ZSTD_e_flush` — added v22.23.2
+- `ZSTD_error_checksum_wrong` — added v22.23.2
+- `ZSTD_error_corruption_detected` — added v22.23.2
+- `ZSTD_error_dictionary_corrupted` — added v22.23.2
+- `ZSTD_error_dictionary_wrong` — added v22.23.2
+- `ZSTD_error_dictionaryCreation_failed` — added v22.23.2
+- `ZSTD_error_dstBuffer_null` — added v22.23.2
+- `ZSTD_error_dstSize_tooSmall` — added v22.23.2
+- `ZSTD_error_frameParameter_unsupported` — added v22.23.2
+- `ZSTD_error_frameParameter_windowTooLarge` — added v22.23.2
+- `ZSTD_error_GENERIC` — added v22.23.2
+- `ZSTD_error_init_missing` — added v22.23.2
+- `ZSTD_error_literals_headerWrong` — added v22.23.2
+- `ZSTD_error_maxSymbolValue_tooLarge` — added v22.23.2
+- `ZSTD_error_maxSymbolValue_tooSmall` — added v22.23.2
+- `ZSTD_error_memory_allocation` — added v22.23.2
+- `ZSTD_error_no_error` — added v22.23.2
+- `ZSTD_error_noForwardProgress_destFull` — added v22.23.2
+- `ZSTD_error_noForwardProgress_inputEmpty` — added v22.23.2
+- `ZSTD_error_parameter_combination_unsupported` — added v22.23.2
+- `ZSTD_error_parameter_outOfBound` — added v22.23.2
+- `ZSTD_error_parameter_unsupported` — added v22.23.2
+- `ZSTD_error_prefix_unknown` — added v22.23.2
+- `ZSTD_error_srcSize_wrong` — added v22.23.2
+- `ZSTD_error_stabilityCondition_notRespected` — added v22.23.2
+- `ZSTD_error_stage_wrong` — added v22.23.2
+- `ZSTD_error_tableLog_tooLarge` — added v22.23.2
+- `ZSTD_error_version_unsupported` — added v22.23.2
+- `ZSTD_error_workSpace_tooSmall` — added v22.23.2
+- `ZSTD_fast` — added v22.23.2
+- `ZSTD_greedy` — added v22.23.2
+- `ZSTD_lazy` — added v22.23.2
+- `ZSTD_lazy2` — added v22.23.2
 - `zstdCompress` — added v22.23.2
 - `ZstdCompress` — added v22.23.2
 - `zstdCompressSync` — added v22.23.2
@@ -814,39 +1198,354 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### _stream_duplex
 
+- `_fromList` — removed after v26.9.0
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
 - `from` — removed after v26.9.0
 - `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
+- `ReadableState` — removed after v26.9.0
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
+- `wrap` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 
 ### _stream_passthrough
 
+- `_fromList` — removed after v26.9.0
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
+- `from` — removed after v26.9.0
+- `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
+- `ReadableState` — removed after v26.9.0
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
+- `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
+- `wrap` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 
 ### _stream_readable
 
 - `_fromList` — removed after v7.10.1
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
 - `from` — removed after v11.15.0
 - `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
 - `ReadableState` — removed after v7.10.1
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
 - `wrap` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 
 ### _stream_transform
 
+- `_fromList` — removed after v26.9.0
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
+- `from` — removed after v26.9.0
+- `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
+- `ReadableState` — removed after v26.9.0
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
+- `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
+- `wrap` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 
 ### _stream_wrap
 
+- `_fromList` — removed after v26.9.0
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
+- `from` — removed after v26.9.0
+- `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
+- `ReadableState` — removed after v26.9.0
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `StreamWrap` — removed after v7.10.1
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
+- `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
+- `wrap` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 
 ### _stream_writable
 
+- `_isArrayBufferView` — removed after v21.7.3
+- `_isUint8Array` — removed after v26.9.0
+- `_uint8ArrayToBuffer` — removed after v26.9.0
+- `addAbortListener` — removed after v19.9.0
+- `addAbortSignal` — removed after v26.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
+- `captureRejections` — removed after v26.9.0
+- `captureRejectionSymbol` — removed after v26.9.0
+- `compose` — removed after v26.9.0
+- `defaultMaxListeners` — removed after v26.9.0
+- `destroy` — removed after v26.9.0
+- `Duplex` — removed after v26.9.0
+- `duplexPair` — removed after v21.7.3
+- `errorMonitor` — removed after v26.9.0
+- `EventEmitter` — removed after v26.9.0
+- `EventEmitterAsyncResource` — removed after v26.9.0
+- `finished` — removed after v26.9.0
 - `fromWeb` — removed after v26.9.0
+- `getDefaultHighWaterMark` — removed after v26.9.0
+- `getEventListeners` — removed after v26.9.0
+- `getMaxListeners` — removed after v26.9.0
+- `init` — removed after v26.9.0
+- `isDestroyed` — removed after v26.9.0
+- `isDisturbed` — removed after v26.9.0
+- `isErrored` — removed after v26.9.0
+- `isReadable` — removed after v26.9.0
+- `isWritable` — removed after v26.9.0
+- `kMaxEventTargetListeners` — removed after v26.9.0
+- `kMaxEventTargetListenersWarned` — removed after v26.9.0
+- `length` — removed after v7.10.1
+- `listenerCount` — removed after v26.9.0
+- `name` — removed after v7.10.1
+- `on` — removed after v26.9.0
+- `once` — removed after v26.9.0
+- `PassThrough` — removed after v26.9.0
+- `pipeline` — removed after v26.9.0
+- `promises` — removed after v26.9.0
+- `prototype` — removed after v7.10.1
+- `Readable` — removed after v26.9.0
+- `setDefaultHighWaterMark` — removed after v26.9.0
+- `setMaxListeners` — removed after v26.9.0
+- `Stream` — removed after v26.9.0
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `toWeb` — removed after v26.9.0
+- `Transform` — removed after v26.9.0
+- `usingDomains` — removed after v26.9.0
+- `Writable` — removed after v26.9.0
 - `WritableState` — removed after v7.10.1
 
 ### _tls_common
@@ -869,8 +1568,13 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### assert
 
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
 - `Assert` — removed after v23.11.1
 - `AssertionError` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
 - `CallTracker` — removed after v13.14.0
 - `deepEqual` — removed after v7.10.1
 - `deepStrictEqual` — removed after v7.10.1
@@ -879,19 +1583,35 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `equal` — removed after v7.10.1
 - `fail` — removed after v7.10.1
 - `ifError` — removed after v7.10.1
+- `length` — removed after v7.10.1
+- `name` — removed after v7.10.1
 - `notDeepEqual` — removed after v7.10.1
 - `notDeepStrictEqual` — removed after v7.10.1
 - `notEqual` — removed after v7.10.1
 - `notStrictEqual` — removed after v7.10.1
 - `ok` — removed after v7.10.1
+- `prototype` — removed after v7.10.1
 - `rejects` — removed after v9.11.2
 - `strictEqual` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `throws` — removed after v7.10.1
 
 ### assert/strict
 
 - `Assert` — removed after v23.11.1
 - `CallTracker` — removed after v25.9.0
+
+### async_hooks
+
+- `currentId` — removed after v9.11.2
+- `emitAfter` — removed after v10.24.1
+- `emitBefore` — removed after v10.24.1
+- `emitDestroy` — removed after v10.24.1
+- `emitInit` — removed after v10.24.1
+- `initTriggerId` — removed after v10.24.1
+- `newUid` — removed after v10.24.1
+- `runInAsyncIdScope` — removed after v10.24.1
+- `triggerId` — removed after v9.11.2
 
 ### buffer
 
@@ -917,14 +1637,27 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `_events` — removed after v7.10.1
 - `_eventsCount` — removed after v7.10.1
 - `_maxListeners` — removed after v7.10.1
+- `addListener` — removed after v7.10.1
 - `disconnect` — removed after v7.10.1
 - `domain` — removed after v7.10.1
+- `emit` — removed after v7.10.1
+- `eventNames` — removed after v7.10.1
 - `fork` — removed after v7.10.1
+- `getMaxListeners` — removed after v7.10.1
 - `isMaster` — removed after v7.10.1
 - `isWorker` — removed after v7.10.1
+- `listenerCount` — removed after v7.10.1
+- `listeners` — removed after v7.10.1
+- `on` — removed after v7.10.1
+- `once` — removed after v7.10.1
+- `prependListener` — removed after v7.10.1
+- `prependOnceListener` — removed after v7.10.1
+- `removeAllListeners` — removed after v7.10.1
+- `removeListener` — removed after v7.10.1
 - `SCHED_NONE` — removed after v7.10.1
 - `SCHED_RR` — removed after v7.10.1
 - `schedulingPolicy` — removed after v7.10.1
+- `setMaxListeners` — removed after v7.10.1
 - `settings` — removed after v7.10.1
 - `setupMaster` — removed after v7.10.1
 - `Worker` — removed after v7.10.1
@@ -932,6 +1665,9 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 
 ### console
 
+- `_stderr` — removed after v7.10.1
+- `_stdout` — removed after v7.10.1
+- `_times` — removed after v7.10.1
 - `assert` — removed after v7.10.1
 - `clear` — removed after v7.10.1
 - `Console` — removed after v7.10.1
@@ -942,6 +1678,12 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `info` — removed after v7.10.1
 - `log` — removed after v7.10.1
 - `markTimeline` — removed after v11.15.0
+- `Symbol(counts)` — removed after v7.10.1
+- `Symbol(groupIndent)` — removed after v10.24.1
+- `Symbol(kGroupIndent)` — removed after v22.23.2
+- `Symbol(kGroupIndentationString)` — removed after v23.11.1
+- `Symbol(kGroupIndentWidth)` — removed after v13.14.0
+- `Symbol(Symbol.toStringTag)` — removed after v13.14.0
 - `time` — removed after v7.10.1
 - `timeEnd` — removed after v7.10.1
 - `timeline` — removed after v11.15.0
@@ -1208,6 +1950,7 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `DiffieHellman` — removed after v7.10.1
 - `DiffieHellmanGroup` — removed after v7.10.1
 - `ECDH` — removed after v7.10.1
+- `fips` — removed after v7.10.1
 - `getCiphers` — removed after v7.10.1
 - `getCurves` — removed after v7.10.1
 - `getDiffieHellman` — removed after v7.10.1
@@ -1330,14 +2073,24 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 ### events
 
 - `addAbortListener` — removed after v19.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
 - `defaultMaxListeners` — removed after v7.10.1
 - `EventEmitter` — removed after v7.10.1
 - `init` — removed after v7.10.1
+- `length` — removed after v7.10.1
 - `listenerCount` — removed after v7.10.1
+- `name` — removed after v7.10.1
+- `prototype` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `usingDomains` — removed after v7.10.1
 
 ### fs
 
+- `_stringToFlags` — removed after v7.10.1
 - `_toUnixTimestamp` — removed after v7.10.1
 - `access` — removed after v7.10.1
 - `accessSync` — removed after v7.10.1
@@ -1404,6 +2157,7 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `statSync` — removed after v7.10.1
 - `symlink` — removed after v7.10.1
 - `symlinkSync` — removed after v7.10.1
+- `SyncWriteStream` — removed after v7.10.1
 - `truncate` — removed after v7.10.1
 - `truncateSync` — removed after v7.10.1
 - `unlink` — removed after v7.10.1
@@ -1475,16 +2229,27 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `_nodeModulePaths` — removed after v7.10.1
 - `_pathCache` — removed after v7.10.1
 - `_preloadModules` — removed after v7.10.1
+- `_readPackage` — removed after v17.9.1
 - `_resolveFilename` — removed after v7.10.1
 - `_resolveLookupPaths` — removed after v7.10.1
+- `_stat` — removed after v17.9.1
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
 - `builtinModules` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
 - `createRequireFromPath` — removed after v16.20.2
 - `globalPaths` — removed after v7.10.1
 - `isBuiltin` — removed after v17.9.1
+- `length` — removed after v7.10.1
 - `Module` — removed after v7.10.1
+- `name` — removed after v7.10.1
+- `prototype` — removed after v7.10.1
 - `register` — removed after v19.9.0
 - `requireRepl` — removed after v7.10.1
 - `runMain` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `wrap` — removed after v7.10.1
 - `wrapper` — removed after v7.10.1
 
@@ -1507,6 +2272,36 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 ### node-inspect/lib/_inspect
 
 - `start` — removed after v12.22.12
+
+### node-inspect/lib/internal/inspect_client
+
+- `apply` — removed after v12.22.12
+- `arguments` — removed after v12.22.12
+- `bind` — removed after v12.22.12
+- `call` — removed after v12.22.12
+- `caller` — removed after v12.22.12
+- `defaultMaxListeners` — removed after v12.22.12
+- `EventEmitter` — removed after v12.22.12
+- `init` — removed after v12.22.12
+- `length` — removed after v12.22.12
+- `listenerCount` — removed after v12.22.12
+- `name` — removed after v12.22.12
+- `once` — removed after v12.22.12
+- `prototype` — removed after v12.22.12
+- `Symbol(Symbol.hasInstance)` — removed after v12.22.12
+- `usingDomains` — removed after v12.22.12
+
+### node-inspect/lib/internal/inspect_repl
+
+- `apply` — removed after v12.22.12
+- `arguments` — removed after v12.22.12
+- `bind` — removed after v12.22.12
+- `call` — removed after v12.22.12
+- `caller` — removed after v12.22.12
+- `length` — removed after v12.22.12
+- `name` — removed after v12.22.12
+- `prototype` — removed after v12.22.12
+- `Symbol(Symbol.hasInstance)` — removed after v12.22.12
 
 ### node:test
 
@@ -1583,12 +2378,14 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `_linkedBinding` — removed after v7.10.1
 - `_maxListeners` — removed after v7.10.1
 - `_needImmediateCallback` — removed after v7.10.1
+- `_promiseRejectEvent` — removed after v7.10.1
 - `_rawDebug` — removed after v7.10.1
 - `_startProfilerIdleNotifier` — removed after v7.10.1
 - `_stopProfilerIdleNotifier` — removed after v7.10.1
 - `_tickCallback` — removed after v7.10.1
 - `_tickDomainCallback` — removed after v7.10.1
 - `abort` — removed after v7.10.1
+- `addListener` — removed after v7.10.1
 - `arch` — removed after v7.10.1
 - `argv` — removed after v7.10.1
 - `argv0` — removed after v7.10.1
@@ -1602,8 +2399,11 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `debugPort` — removed after v7.10.1
 - `dlopen` — removed after v7.10.1
 - `domain` — removed after v7.10.1
+- `emit` — removed after v7.10.1
 - `emitWarning` — removed after v7.10.1
 - `env` — removed after v7.10.1
+- `EventEmitter` — removed after v7.10.1
+- `eventNames` — removed after v7.10.1
 - `execArgv` — removed after v7.10.1
 - `execPath` — removed after v7.10.1
 - `exit` — removed after v7.10.1
@@ -1613,24 +2413,34 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `geteuid` — removed after v7.10.1
 - `getgid` — removed after v7.10.1
 - `getgroups` — removed after v7.10.1
+- `getMaxListeners` — removed after v7.10.1
 - `getuid` — removed after v7.10.1
 - `hrtime` — removed after v7.10.1
 - `initgroups` — removed after v7.10.1
 - `kill` — removed after v7.10.1
+- `listenerCount` — removed after v7.10.1
+- `listeners` — removed after v7.10.1
 - `mainModule` — removed after v7.10.1
 - `memoryUsage` — removed after v7.10.1
 - `moduleLoadList` — removed after v7.10.1
 - `nextTick` — removed after v7.10.1
+- `on` — removed after v7.10.1
+- `once` — removed after v7.10.1
 - `openStdin` — removed after v7.10.1
 - `pid` — removed after v7.10.1
 - `platform` — removed after v7.10.1
 - `ppid` — removed after v7.10.1
+- `prependListener` — removed after v7.10.1
+- `prependOnceListener` — removed after v7.10.1
 - `reallyExit` — removed after v7.10.1
 - `release` — removed after v7.10.1
+- `removeAllListeners` — removed after v7.10.1
+- `removeListener` — removed after v7.10.1
 - `setegid` — removed after v7.10.1
 - `seteuid` — removed after v7.10.1
 - `setgid` — removed after v7.10.1
 - `setgroups` — removed after v7.10.1
+- `setMaxListeners` — removed after v7.10.1
 - `setSourceMapsEnabled` — removed after v15.14.0
 - `setuid` — removed after v7.10.1
 - `sourceMapsEnabled` — removed after v19.9.0
@@ -1679,7 +2489,6 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 ### repl
 
 - `_builtinLibs` — removed after v7.10.1
-- `builtinModules` — removed after v22.23.2
 - `isValidSyntax` — removed after v21.7.3
 - `Recoverable` — removed after v7.10.1
 - `REPL_MODE_MAGIC` — removed after v7.10.1
@@ -1692,12 +2501,22 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 ### stream
 
 - `_isArrayBufferView` — removed after v21.7.3
+- `addAbortListener` — removed after v19.9.0
+- `apply` — removed after v7.10.1
+- `arguments` — removed after v7.10.1
+- `bind` — removed after v7.10.1
+- `call` — removed after v7.10.1
+- `caller` — removed after v7.10.1
 - `Duplex` — removed after v7.10.1
 - `duplexPair` — removed after v21.7.3
+- `length` — removed after v7.10.1
+- `name` — removed after v7.10.1
 - `PassThrough` — removed after v7.10.1
+- `prototype` — removed after v7.10.1
 - `Readable` — removed after v7.10.1
 - `Stream` — removed after v7.10.1
 - `super_` — removed after v7.10.1
+- `Symbol(Symbol.hasInstance)` — removed after v7.10.1
 - `Transform` — removed after v7.10.1
 - `Writable` — removed after v7.10.1
 
@@ -1890,31 +2709,24 @@ Versions analyzed: v0.12.18, v4.9.1, v5.12.0, v6.17.1, v7.10.1, v8.17.0, v9.11.2
 - `createUnzip` — removed after v7.10.1
 - `deflate` — removed after v7.10.1
 - `Deflate` — removed after v7.10.1
-- `DEFLATE` — removed after v12.22.12
 - `deflateRaw` — removed after v7.10.1
 - `DeflateRaw` — removed after v7.10.1
-- `DEFLATERAW` — removed after v12.22.12
 - `deflateRawSync` — removed after v7.10.1
 - `deflateSync` — removed after v7.10.1
 - `gunzip` — removed after v7.10.1
 - `Gunzip` — removed after v7.10.1
-- `GUNZIP` — removed after v12.22.12
 - `gunzipSync` — removed after v7.10.1
 - `gzip` — removed after v7.10.1
 - `Gzip` — removed after v7.10.1
-- `GZIP` — removed after v12.22.12
 - `gzipSync` — removed after v7.10.1
 - `inflate` — removed after v7.10.1
 - `Inflate` — removed after v7.10.1
-- `INFLATE` — removed after v12.22.12
 - `inflateRaw` — removed after v7.10.1
 - `InflateRaw` — removed after v7.10.1
-- `INFLATERAW` — removed after v12.22.12
 - `inflateRawSync` — removed after v7.10.1
 - `inflateSync` — removed after v7.10.1
 - `unzip` — removed after v7.10.1
 - `Unzip` — removed after v7.10.1
-- `UNZIP` — removed after v12.22.12
 - `unzipSync` — removed after v7.10.1
 - `Z_BEST_COMPRESSION` — removed after v7.10.1
 - `Z_BEST_SPEED` — removed after v7.10.1
